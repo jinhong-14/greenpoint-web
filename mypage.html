@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>마이페이지 | 그린 크레딧</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mypage">
+  <header class="mypage-header">
+    <h1>마이페이지</h1>
+    <p id="welcomeMsg"></p>
+  </header>
+
+  <main class="mypage-main">
+    <section class="reward-cards">
+      <article class="reward-card">
+        <div class="icon">🪴</div>
+        <h3>친환경 제품 교환</h3>
+        <ul>
+          <li>총 교환 건수 <strong>12,458회</strong></li>
+          <li>절약된 탄소량 <strong>8,930kg CO₂</strong></li>
+          <li>최근 교환 제품 <strong>대나무 칫솔세트</strong></li>
+        </ul>
+        <button class="btn-outline">교환하기</button>
+      </article>
+
+      <article class="reward-card">
+        <div class="icon">🎫</div>
+        <h3>문화상품권 교환</h3>
+        <ul>
+          <li>총 교환 인원 <strong>8,231명</strong></li>
+          <li>누적 사용 크레딧 <strong>126,540</strong></li>
+          <li>인기 교환 금액 <strong>5,000원</strong></li>
+        </ul>
+        <button class="btn-outline">교환하기</button>
+      </article>
+
+      <article class="reward-card">
+        <div class="icon">🌍</div>
+        <h3>탄소상쇄 프로젝트 기부</h3>
+        <ul>
+          <li>참여자 수 <strong>2,415명</strong></li>
+          <li>기부된 크레딧 <strong>73,800</strong></li>
+          <li>기부된 나무 수 <strong>1,220그루</strong></li>
+        </ul>
+        <button class="btn-outline">기부하기</button>
+      </article>
+    </section>
+
+    <a href="index.html" class="btn btn--primary back-btn">메인으로 돌아가기</a>
+  </main>
+
+  <script>
+    const email = localStorage.getItem("userEmail");
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const msg = document.getElementById("welcomeMsg");
+
+// 로그인 상태 확인
+    if (!isLoggedIn || isLoggedIn !== "true") {
+     alert("로그인 후 이용할 수 있습니다.");
+     window.location.href = "login.html";
+    } else {
+     msg.textContent = `${email}님, 반가워요 🌱`;
+    }
+
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,834 @@
+:root {
+  --bg: #00110f;
+  --ink: #e9f9f6;
+  --accent: #1bd0c7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ===============================
+   네비게이션
+================================ */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 32px;
+  background: transparent;
+}
+
+.center-nav {
+  display: flex;
+  gap: 0;
+}
+
+.nav__link {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav__link:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  color: rgba(233,249,246,0.4);
+}
+
+.nav__link:hover {
+  color: var(--accent);
+}
+
+/* ===============================
+   메인 (Hero)
+================================ */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+.hero__title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.hero__subtitle {
+  margin-top: 12px;
+  font-size: 17px;
+  color: #b8d9d6;
+}
+
+.cta {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.btn--primary:hover { background: #19b9ae; }
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--accent);
+}
+.btn--ghost:hover { background: rgba(27,208,199,0.1); }
+
+/* ===============================
+   카드 섹션
+================================ */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 60px 0;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 24px;
+  width: 210px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
+
+.card .icon { font-size: 34px; margin-bottom: 10px; }
+.card .badge { color: var(--accent); margin-top: 10px; font-size: 14px; }
+
+/* ===============================
+   통계 섹션
+================================ */
+.stats-wrap {
+  text-align: center;
+  margin: 60px 0 100px;
+}
+.stats-wrap h2 { font-size: 22px; margin-bottom: 32px; }
+
+.kpis {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.kpi {
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 24px;
+  width: 220px;
+}
+.kpi .num { font-size: 20px; color: var(--accent); margin-top: 8px; }
+.kpi .rank { font-size: 13px; color: #a6c8c4; margin-top: 8px; }
+
+/* ===============================
+   HOWTO
+================================ */
+.howto-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.howto-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+.howto-step {
+  max-width: 520px;
+  width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ===============================
+   ABOUT (구버전)
+================================ */
+.about-page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-main { display: flex; justify-content: center; align-items: center; }
+.about-img {
+  max-width: 800px;
+  width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* ===============================
+   DETAIL (GreenPoint)
+================================ */
+.detail-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+.detail-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.detail-header h1 {
+  font-size: 28px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.detail-icon { width: 100px; height: 100px; }
+.detail-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+.detail-img {
+  max-width: 1000px;
+  width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+.detail-footer { margin: 60px 0; }
+
+/* ===============================
+   Footer
+================================ */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===============================
+   ABOUT (New Ver. – 서비스 소개)
+================================ */
+.about-new-page {
+  background: #ffffff;
+  color: #111;
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about-new-header {
+  width: 100%;
+  background: #232527;
+  color: white;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+}
+
+.about-new-header .header-dots {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  display: flex;
+  gap: 8px;
+}
+.about-new-header .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff5f57; }
+.dot.yellow { background: #ffbd2f; }
+.dot.green { background: #28c840; }
+
+.about-new-main {
+  text-align: center;
+  margin-top: 60px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-new-main h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.icon-grid {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.circle.blue { background: #1f54d1; }
+.circle.yellow { background: #f8cb0b; color: #555; }
+.circle.bluegreen { background: #2657b7; }
+
+.icon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #000;
+}
+
+/* ===============================
+   REWARD TYPE PAGE
+================================ */
+.reward-page {
+  background: #fff;
+  color: #111;
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+/* 상단 헤더 */
+.reward-header {
+  width: 100%;
+  background: #232527;
+  color: white;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+}
+
+.reward-header .header-dots {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  display: flex;
+  gap: 8px;
+}
+.reward-header .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff5f57; }
+.dot.yellow { background: #ffbd2f; }
+.dot.green { background: #28c840; }
+
+/* 본문 */
+.reward-main {
+  max-width: 900px;
+  padding: 40px 20px 80px;
+}
+
+.reward-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.reward-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2657b7, #1f54d1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  color: #4be28a;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.reward-main h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+}
+
+.reward-main p {
+  margin-bottom: 18px;
+  font-size: 16px;
+  color: #333;
+}
+
+.reward-main ol {
+  margin-top: 12px;
+  padding-left: 20px;
+  color: #333;
+}
+
+.reward-main ol li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.reward-footer {
+  text-align: center;
+  padding: 20px 0 40px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===============================
+   문의하기 (Contact Page)
+================================ */
+.contact-page {
+  background: linear-gradient(145deg, #0a221f, #16322f);
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-card {
+  background: rgba(20, 30, 25, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  width: 340px;
+  padding: 30px 20px;
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.contact-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #d8d8d8;
+}
+
+/* 검색창 */
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 240px;
+  margin-bottom: 30px;
+}
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  width: 100%;
+  color: #f1f1f1;
+}
+.search-box button {
+  background: none;
+  border: none;
+  color: #f1f1f1;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* FAQ 영역 */
+.faq-section h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.faq-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.faq-section li {
+  font-size: 14px;
+  color: #e4e4e4;
+  margin: 6px 0;
+}
+
+/* 하단 링크 */
+.contact-footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.contact-footer a {
+  font-size: 13px;
+  color: #cfcfcf;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact-footer a:hover {
+  color: #fff;
+}
+
+/* ===============================
+   FAQ PAGE
+================================ */
+.faq-page {
+  background: linear-gradient(145deg, #0a221f, #16322f);
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-card {
+  background: rgba(25, 35, 30, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  padding: 40px 30px;
+  color: #f1f1f1;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.faq-card h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.faq-q {
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.faq-a {
+  font-size: 15px;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* 반응형 처리 */
+@media (max-width: 700px) {
+  .faq-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .faq-card {
+    padding: 30px 20px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #aefae3;
+}
+
+/* ===============================
+   로그인 페이지 (미니멀 스타일, 소셜 제거)
+================================ */
+.login-page {
+  background: #fff;
+  color: #111;
+  font-family: 'Pretendard', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-form label {
+  font-size: 15px;
+  margin-bottom: -4px;
+}
+
+.login-form input {
+  border: none;
+  border-bottom: 2px solid #111;
+  padding: 8px 4px;
+  font-size: 15px;
+  outline: none;
+  background: transparent;
+  color: #111;
+  margin-bottom: 12px;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #1bd0c7;
+}
+
+.login-btn {
+  margin-top: 12px;
+  padding: 12px;
+  background: #1bd0c7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #19b9ae;
+}
+
+.login-msg {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #d9534f;
+  text-align: center;
+}
+
+/* 하단 링크 */
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.login-links a {
+  color: #0072ff;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+  color: #1bd0c7;
+}
+
+/* ===============================
+   마이페이지
+================================ */
+.mypage {
+  background: #f8fbf8;
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+  color: #1e2b23;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 80px;
+}
+
+.mypage-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mypage-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1b4d3e;
+}
+
+.mypage-header p {
+  font-size: 16px;
+  color: #3c5d52;
+}
+
+.reward-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+.reward-card {
+  background: #fff;
+  border: 1px solid #d9e6d5;
+  border-radius: 16px;
+  width: 260px;
+  padding: 28px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reward-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.reward-card .icon {
+  font-size: 42px;
+  color: #1b4d3e;
+  margin-bottom: 10px;
+}
+
+.reward-card h3 {
+  font-size: 18px;
+  color: #1c3d32;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.reward-card ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.reward-card li {
+  font-size: 14px;
+  margin: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  color: #394b41;
+}
+
+.reward-card strong {
+  color: #155c47;
+}
+
+.btn-outline {
+  border: 1px solid #155c47;
+  background: transparent;
+  color: #155c47;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #155c47;
+  color: #fff;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenPoint 앱 소개 | 그린 크레딧</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* 스크롤 애니메이션 */
+    .detail-img {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+      margin-bottom: 80px;
+      width: 95%;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+    .detail-img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="detail-page">
+    <header class="detail-header">
+      <h1>GreenPoint 앱 소개</h1>
+    </header>
+
+    <main class="detail-main">
+      <img src="KakaoTalk_20251016_183059239_01.png" alt="GreenPoint 설명 1" class="detail-img" />
+      <img src="KakaoTalk_20251016_183059239_02.png" alt="GreenPoint 설명 2" class="detail-img" />
+    </main>
+
+    <footer class="detail-footer">
+      <a href="about.html" class="btn btn--primary">서비스 소개로 돌아가기</a>
+    </footer>
+  </div>
+
+  <script>
+    // 스크롤 시 이미지 자연스럽게 등장
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.detail-img').forEach(img => {
+      observer.observe(img);
+    });
+  </script>
+</body>
+</html>
+
