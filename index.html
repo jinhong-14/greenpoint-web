@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>그린 크레딧</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 네비게이션 -->
+  <nav class="nav">
+    <div class="center-nav">
+      <a class="nav__link" href="about.html">서비스 소개</a>
+      <a class="nav__link" href="howto.html">사용방법</a>
+      <a class="nav__link" href="contact.html">문의하기</a>
+      <a class="nav__link" href="login.html">로그인</a>
+      <a class="nav__link" href="mypage.html">마이페이지</a>
+    </div>
+  </nav>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="hero">
+    <h1 class="main-logo">GreenPoint</h1>
+
+    <h2 class="hero__title">당신의 작은 행동이<br />지구를 바꿉니다.</h2>
+    <p class="hero__subtitle">친환경 활동으로 크레딧을 모아보세요!</p>
+
+    <div class="cta">
+      <button class="btn btn--primary" onclick="location.href='login.html'">지금 시작하기</button>
+      <button class="btn btn--ghost" onclick="location.href='about.html'">시스템 알아보기</button>
+    </div>
+
+    <section class="features">
+      <article class="card">
+        <div class="icon">🌱</div>
+        <h3>친환경 제품 교환</h3>
+        <div class="badge">+10 크레딧</div>
+      </article>
+      <article class="card">
+        <div class="icon">🚲</div>
+        <h3>문화상품권 교환</h3>
+        <div class="badge">+5 크레딧</div>
+      </article>
+      <article class="card">
+        <div class="icon">🌍</div>
+        <h3>탄소상쇄 프로젝트 기부</h3>
+        <div class="badge">+3 크레딧</div>
+      </article>
+    </section>
+
+    <section class="stats-wrap">
+      <h2>모은 크레딧으로 지구와 함께 성장하세요!</h2>
+      <div class="kpis">
+        <div class="kpi">
+          <h4>친환경 제품 교환</h4>
+          <div class="num">12,458 kg</div>
+        </div>
+        <div class="kpi">
+          <h4>문화상품권 교환</h4>
+          <div class="num">8,231 명</div>
+        </div>
+        <div class="kpi">
+          <h4>탄소상쇄 순위</h4>
+          <div class="rank">1위 2100 — 320명<br/>2위 #100 — 295명</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Green Credit. 모든 권리 보유.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
